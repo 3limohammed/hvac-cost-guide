@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 50" width="240" height="50">
+  <defs>
+    <linearGradient id="gradBrand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="gradFlame" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+  </defs>
+  <!-- Icon Mark -->
+  <rect x="4" y="5" width="40" height="40" rx="8" fill="url(#gradBrand)" />
+  <!-- Snowflake / Cold half -->
+  <path d="M 24 11 L 24 39 M 18 15 L 30 21 M 30 15 L 18 21" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round" />
+  <!-- Flame / Heat wave -->
+  <path d="M 24 23 C 27 20, 31 22, 30 27 C 29 32, 23 35, 23 37 C 23 37, 27 34, 25 31" fill="url(#gradFlame)" opacity="0.9" />
+  <!-- Text Brand -->
+  <text x="54" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="800" fill="#0f172a" letter-spacing="-0.5">HVAC<tspan fill="#0284c7"> COST</tspan></text>
+  <text x="54" y="41" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#64748b" letter-spacing="1.5">INDEPENDENT GUIDE</text>
+</svg>
