@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HVAC Cost Calculator (2026) | Instant Home Cost Estimate</title>
+  <meta name="description" content="Calculate real HVAC replacement and installation costs by home square footage, system type, and ZIP code. Uses verified BLS labor indices and ACCA load sizing.">
+  <link rel="canonical" href="https://hvaccostguide.com/hvac-cost-calculator/">
+  <meta property="og:title" content="HVAC Cost Calculator (2026) | Instant Home Cost Estimate">
+  <meta property="og:description" content="Calculate turnkey HVAC costs for air conditioners, gas furnaces, heat pumps, and ductless mini-splits customized to your home and region.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hvaccostguide.com/hvac-cost-calculator/">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hvaccostguide.com/" },
+      { "@type": "ListItem", "position": 2, "name": "HVAC Cost Calculator", "item": "https://hvaccostguide.com/hvac-cost-calculator/" }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../" class="brand-logo" aria-label="HVAC Cost Guide Homepage">
+        <img src="../assets/img/logo.svg" alt="HVAC Cost Guide" width="200" height="42">
+      </a>
+      <nav class="nav-desktop" aria-label="Primary Navigation">
+        <a href="../hvac-costs/" class="nav-link ">HVAC Costs</a>
+        <a href="../hvac-cost-calculator/" class="nav-link active">Calculator</a>
+        <a href="../hvac-by-state/" class="nav-link ">Costs by State</a>
+        <a href="../guides/" class="nav-link ">Guides</a>
+        <a href="../methodology/" class="nav-link ">Methodology</a>
+        <a href="../hvac-cost-calculator/" class="header-cta">Estimate Cost</a>
+      </nav>
+      <button class="mobile-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" aria-label="Mobile Navigation">
+      <ul class="nav-mobile-list">
+        <li><a href="../hvac-costs/" class="nav-mobile-link">HVAC Costs Directory</a></li>
+        <li><a href="../hvac-cost-calculator/" class="nav-mobile-link">HVAC Cost Calculator</a></li>
+        <li><a href="../hvac-by-state/" class="nav-mobile-link">Costs by State</a></li>
+        <li><a href="../guides/" class="nav-mobile-link">Buyer &amp; Repair Guides</a></li>
+        <li><a href="../ac-repair-vs-replacement/" class="nav-mobile-link">Repair vs. Replace Tool</a></li>
+        <li><a href="../methodology/" class="nav-mobile-link">Data Methodology</a></li>
+        <li><a href="../about/" class="nav-mobile-link">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main-content" class="page-wrapper">
+    <div class="breadcrumbs">
+      <div class="container">
+        <ul class="breadcrumb-list">
+          <li class="breadcrumb-item"><a href="../">Home</a></li>
+          <li class="breadcrumb-separator">/</li>
+          <li class="breadcrumb-item breadcrumb-current">HVAC Cost Calculator</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container container-reading" style="padding-top: 2rem; padding-bottom: 3rem;">
+      <h1>Interactive HVAC Cost Calculator</h1>
+      <div class="meta-stamp">
+        <span class="badge-trust">&#10003; Live Calculation Engine</span>
+        <span>Based on 2026 Regional Labor Multipliers &amp; ACCA Sizing Rules</span>
+      </div>
+
+      <p>
+        Use this independent calculator to estimate your total turnkey HVAC replacement or installation costs. Our model accounts for home square footage, equipment capacity requirements, system type, scope of work, and local labor rates driven by your ZIP code.
+      </p>
+
+      <div class="calculator-card" style="margin: 2rem 0;">
+        <div class="calculator-header">
+          <h3 style="margin-top: 0;">Estimate Your HVAC Project Cost</h3>
+          <p style="margin-bottom: 0;">Adjust the inputs below to view your personalized cost range and equipment vs. labor breakdown.</p>
+        </div>
+
+        <form id="hvac-calc-form" onsubmit="event.preventDefault();">
+          <div class="calc-grid">
+            <div class="calc-field">
+              <label class="calc-label" for="calc-sqft-range">
+                <span>Home Finished Square Footage</span>
+                <span class="calc-value-display"><input type="number" id="calc-sqft-number" value="2000" min="600" max="4500" step="50" style="width: 80px; padding: 2px 6px; font-size: 0.95rem; font-weight: 700; border: 1px solid var(--color-border); border-radius: 4px;"> sq ft</span>
+              </label>
+              <input type="range" id="calc-sqft-range" class="calc-range" min="600" max="4500" step="50" value="2000">
+              <span style="font-size: 0.75rem; color: var(--color-text-light);">Rule of thumb: 1 Ton removes 12,000 BTU/hr (approx 400&ndash;600 sq ft).</span>
+            </div>
+
+            <div class="calc-field">
+              <label class="calc-label" for="calc-zip">
+                <span>5-Digit US ZIP Code</span>
+                <span style="font-weight: 400; font-size: 0.8rem; color: var(--color-text-light);">Matches regional labor index</span>
+              </label>
+              <input type="text" id="calc-zip" class="calc-input" placeholder="e.g. 75001, 33101, 90210" maxlength="5" value="75001">
+            </div>
+
+            <div class="calc-field">
+              <label class="calc-label" for="calc-system">System Type</label>
+              <select id="calc-system" class="calc-select">
+                <option value="full-split" selected>Complete Split System (Central AC + Gas Furnace)</option>
+                <option value="central-ac">Central Air Conditioner Only</option>
+                <option value="gas-furnace">Gas Furnace Only</option>
+                <option value="heat-pump">Air-Source Heat Pump (Heating &amp; Cooling)</option>
+                <option value="mini-split-1">Ductless Mini-Split (1 Single Room Zone)</option>
+                <option value="mini-split-multi">Ductless Mini-Split (Multi-Zone 3-4 Heads)</option>
+              </select>
+            </div>
+
+            <div class="calc-field">
+              <label class="calc-label" for="calc-project">Project Scope</label>
+              <select id="calc-project" class="calc-select">
+                <option value="replacement" selected>Full Replacement (Reusing Existing Ductwork)</option>
+                <option value="new-install">New Installation (Including New Ductwork &amp; Electrical)</option>
+                <option value="major-repair">Major Repair / Component Overhaul</option>
+              </select>
+            </div>
+
+            <div class="calc-field" style="grid-column: 1 / -1;">
+              <label class="calc-label" for="calc-age">Existing System Age</label>
+              <select id="calc-age" class="calc-select">
+                <option value="< 5">Less than 5 years old (Usually under warranty)</option>
+                <option value="5-10">5 to 10 years old (Mid-lifespan)</option>
+                <option value="10-15" selected>10 to 15 years old (Near replacement threshold)</option>
+                <option value="15+">15+ years old (High failure risk &amp; low efficiency)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="calc-result-box" aria-live="polite">
+            <div class="calc-result-header">Estimated Project Cost Range</div>
+            <div id="calc-result-range" class="calc-result-range">$7,300 &ndash; $11,800</div>
+
+            <div class="calc-breakdown-bar">
+              <div id="bar-equip" class="calc-bar-equip"></div>
+              <div id="bar-labor" class="calc-bar-labor"></div>
+              <div id="bar-permits" class="calc-bar-permits"></div>
+            </div>
+
+            <div class="calc-breakdown-legend">
+              <div class="calc-legend-item">
+                <span class="calc-legend-dot" style="background: var(--color-brand);"></span>
+                <span id="legend-equip-val">Equipment: ~55%</span>
+              </div>
+              <div class="calc-legend-item">
+                <span class="calc-legend-dot" style="background: var(--color-emerald);"></span>
+                <span id="legend-labor-val">Labor &amp; Permits: ~35%</span>
+              </div>
+              <div class="calc-legend-item">
+                <span class="calc-legend-dot" style="background: var(--color-amber);"></span>
+                <span id="legend-duct-val">Ancillaries: ~10%</span>
+              </div>
+            </div>
+
+            <div class="calc-factors-list">
+              <span id="calc-pill-region" class="calc-factor-pill">Location: Texas (Labor Index 0.98)</span>
+              <span id="calc-pill-tonnage" class="calc-factor-pill">Est. Capacity: 3.0 Tons (36,000 BTU)</span>
+              <span id="calc-pill-zone" class="calc-factor-pill">Climate: Zone 2/3 (Hot-Humid)</span>
+            </div>
+
+            <div id="calc-advisory" class="callout-info" style="margin-top: 1.25rem; font-size: 0.85rem; padding: 0.75rem 1rem; border-radius: 6px;">
+              System is in its late operational window. Compare repair costs against energy efficiency gains.
+            </div>
+
+            <p class="calc-disclaimer">
+              <strong>Disclaimer:</strong> This calculation is an independent estimate provided for budgeting purposes. Actual contractor quotes depend on home thermal insulation, duct layout, circuit breaker panel capacity, and local permitting requirements. Always obtain 3 itemized bids from licensed HVAC professionals.
+            </p>
+          </div>
+        </form>
+      </div>
+
+  <!-- AdSense Placement Reserved -->
+
+      <h2>How This Calculation Works</h2>
+      <p>Our mathematical calculation engine relies on four primary data layers:</p>
+      <ol>
+        <li><strong>Capacity Tonnage Calculation:</strong> Uses baseline square footage bands mapped to ACCA Manual J residential load calculation standards. Standard insulation requires 1 ton of cooling capacity per 500&ndash;600 square feet in temperate climates and 400&ndash;450 square feet in hot southern climates.</li>
+        <li><strong>Equipment Cost Index:</strong> Synthesizes wholesale trade distributor price sheets across entry-level (Goodman, Payne), mid-tier (Carrier, Trane, Lennox), and premium inverter brands (Daikin, Mitsubishi, Bosch).</li>
+        <li><strong>Regional Labor Rate Index:</strong> Applies Bureau of Labor Statistics (BLS) Occupational Employment &amp; Wages data (SOC 49-9021) to adjust contractor labor hours based on state and metro wage baselines.</li>
+        <li><strong>Advisory Decision Logic:</strong> Analyzes the entered age of your current system against the industry-standard <em>$5,000 Rule</em> (Age &times; Repair Cost) to advise whether repairing or replacing provides superior financial return.</li>
+      </ol>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>HVAC Cost Guide</h3>
+          <p>Independent HVAC cost guides, calculators and replacement estimates for US homeowners. Unbiased, data-driven, and research-backed.</p>
+          <div style="margin-top: 1rem; color: #94a3b8; font-size: 0.85rem;">Updated for 2026 HVAC Industry Standards</div>
+        </div>
+        <div class="footer-col">
+          <h4>HVAC Costs</h4>
+          <ul class="footer-links">
+            <li><a href="../hvac-replacement-cost/">HVAC Replacement Cost</a></li>
+            <li><a href="../ac-replacement-cost/">AC Replacement Cost</a></li>
+            <li><a href="../ac-repair-cost/">AC Repair Cost</a></li>
+            <li><a href="../furnace-replacement-cost/">Furnace Replacement Cost</a></li>
+            <li><a href="../furnace-repair-cost/">Furnace Repair Cost</a></li>
+            <li><a href="../heat-pump-cost/">Heat Pump Cost</a></li>
+            <li><a href="../mini-split-installation-cost/">Mini-Split Installation Cost</a></li>
+            <li><a href="../central-ac-installation-cost/">Central AC Installation Cost</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Decision Guides</h4>
+          <ul class="footer-links">
+            <li><a href="../ac-repair-vs-replacement/">Repair vs. Replace AC</a></li>
+            <li><a href="../how-long-does-an-ac-last/">How Long Does an AC Last?</a></li>
+            <li><a href="../how-long-does-a-furnace-last/">How Long Does a Furnace Last?</a></li>
+            <li><a href="../what-size-ac-do-i-need/">What Size AC Do I Need?</a></li>
+            <li><a href="../hvac-maintenance-cost/">HVAC Maintenance Cost</a></li>
+            <li><a href="../hvac-cost-calculator/">HVAC Cost Calculator</a></li>
+            <li><a href="../hvac-by-state/">Costs by State</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>About &amp; Trust</h4>
+          <ul class="footer-links">
+            <li><a href="../about/">About Us</a></li>
+            <li><a href="../methodology/">Data Methodology</a></li>
+            <li><a href="../contact/">Contact Editorial Team</a></li>
+            <li><a href="../privacy-policy/">Privacy Policy</a></li>
+            <li><a href="../terms/">Terms of Use</a></li>
+            <li><a href="../disclaimer/">Disclaimer</a></li>
+            <li><a href="../sitemap.xml">XML Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-disclaimer">
+        <p>
+          <strong>Editorial Notice &amp; Disclaimer:</strong> HVAC Cost Guide is an independent consumer information resource. The cost figures, regional labor indices, and sizing tables provided on this website are estimates based on aggregated industry data, U.S. Bureau of Labor Statistics wage reports, and ACCA engineering guidelines. Actual quotes will vary depending on ductwork condition, home thermal insulation, electrical capacity, and contractor pricing. Always obtain at least 3 written bids from licensed, insured local HVAC professionals performing Manual J load calculations before purchasing equipment.
+        </p>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 HVAC Cost Guide. All rights reserved.</div>
+        <div style="display: flex; gap: 1rem;">
+          <a href="../privacy-policy/" style="color: #94a3b8;">Privacy Policy</a>
+          <a href="../terms/" style="color: #94a3b8;">Terms</a>
+          <a href="../disclaimer/" style="color: #94a3b8;">Disclaimer</a>
+          <a href="../methodology/" style="color: #94a3b8;">Methodology</a>
+          <a href="../contact/" style="color: #94a3b8;">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/js/hvac-data.js"></script>
+  <script src="../assets/js/calculator.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
