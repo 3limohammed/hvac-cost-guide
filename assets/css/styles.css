@@ -644,11 +644,58 @@ img {
   padding-left: 1.25rem;
 }
 
-/* AdSense Unit Placement (Hidden until active AdSense tags are inserted) */
+/* AdSense Layout-Stable Container Architecture (Zero CLS) */
 .ad-slot {
   display: none;
   margin: 2.5rem 0;
   text-align: center;
+}
+
+.ad-container {
+  margin: 2rem auto;
+  text-align: center;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.ad-label {
+  display: block;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  margin-bottom: 0.35rem;
+}
+
+.ad-slot-leaderboard {
+  min-height: 90px;
+  max-width: 728px;
+  margin: 0 auto;
+  background: rgba(241, 245, 249, 0.5);
+  border: 1px dashed rgba(203, 213, 225, 0.6);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ad-slot-rectangle {
+  min-height: 250px;
+  max-width: 300px;
+  margin: 0 auto;
+  background: rgba(241, 245, 249, 0.5);
+  border: 1px dashed rgba(203, 213, 225, 0.6);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .ad-slot-leaderboard {
+    min-height: 50px;
+    max-width: 320px;
+  }
 }
 
 /* Interactive Calculator Component */
