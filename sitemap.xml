@@ -295,4 +295,23 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <!-- New High-Intent Troubleshooting & Tax Credit Money Pages -->
+  <url>
+    <loc>https://3limohammed.github.io/hvac-cost-guide/ac-blowing-warm-air/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://3limohammed.github.io/hvac-cost-guide/furnace-blowing-cold-air/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://3limohammed.github.io/hvac-cost-guide/heat-pump-tax-credits-2026/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
