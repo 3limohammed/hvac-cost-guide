@@ -1,0 +1,12 @@
+# Local generator and helper scripts (optional to ignore or keep)
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment and secrets
+.env
+.env.local
+*.pfx
+*.pem

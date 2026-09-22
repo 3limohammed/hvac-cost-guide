@@ -59,6 +59,6 @@ hvac-cost-guide/
 ## 🔍 Google Search Console Setup
 
 1. Go to [Google Search Console](https://search.google.com/search-console).
-2. Add your live URL (e.g. `https://3limohammed.github.io/hvac-cost-guide/` or custom domain).
+2. Add your live URL (e.g. `https://hvac-cost-guide.vercel.app/` or custom domain).
 3. Verify ownership via HTML meta tag or verification file.
 4. In the left menu, click **Sitemaps**, enter `sitemap.xml`, and click **Submit**.
