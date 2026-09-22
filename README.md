@@ -5,23 +5,30 @@ Independent, research-backed HVAC replacement, repair, and installation cost ben
 ## 🌟 Overview
 - **Target Audience:** United States homeowners seeking accurate heating and cooling cost estimates.
 - **Technology Stack:** Pure Vanilla HTML5, CSS3, and JavaScript (Zero external frameworks, blazing fast static delivery).
-- **SEO & Structure:** Fully structured semantic HTML, JSON-LD schemas (WebSite, Organization, FAQPage, Article), dynamic interactive HVAC cost calculator, 47 canonical URLs in `sitemap.xml`, and customized 404 page.
+- **SEO & Structure:** Fully structured semantic HTML, JSON-LD schemas (`WebSite`, `Organization`, `FAQPage`, `Article`, `HowTo`, `GovernmentService`), dynamic interactive HVAC cost calculator, 50 canonical URLs in `sitemap.xml`, and customized 404 page.
 - **Monetization Architecture:**
   - Integrated Amazon Associates product recommendation cards (Smart thermostats, DIY mini-splits, air filters, diagnostic meters) with FTC-compliant affiliate disclosures.
-  - Reserved, non-intrusive AdSense ad slots pre-configured for instant activation upon domain approval.
+  - Standard IAB-compliant `ads.txt` and layout-stable AdSense container architecture (Zero CLS).
+- **Edge Performance:** Configured for Cloudflare Pages with immutable asset caching (`Cache-Control: public, max-age=31536000`), security headers (`_headers`), and canonical redirects (`_redirects`).
 
 ## 📁 Repository Structure
 ```
 hvac-cost-guide/
 ├── index.html                           # Homepage with HVAC Cost Calculator
 ├── 404.html                             # Custom error page
-├── sitemap.xml                          # Complete XML Sitemap (47 canonical URLs)
+├── sitemap.xml                          # Complete XML Sitemap (50 canonical URLs)
 ├── robots.txt                           # Search engine crawling rules
+├── ads.txt                              # Google AdSense authorized sellers file
+├── _headers                             # Cloudflare Pages edge cache & security headers
+├── _redirects                           # Cloudflare Pages 301 redirect map
 ├── assets/
-│   ├── css/styles.css                   # Responsive design system & product cards
+│   ├── css/styles.css                   # Responsive design system & ad containers
 │   ├── js/calculator.js                 # Interactive pricing calculator engine
 │   ├── js/hvac-data.js                  # Regional labor and equipment datasets
 │   └── img/                             # SVG icons and visual assets
+├── ac-blowing-warm-air/                 # Emergency cooling troubleshooting & HowTo
+├── furnace-blowing-cold-air/            # Emergency heating troubleshooting & safety
+├── heat-pump-tax-credits-2026/          # Inflation Reduction Act & 25C tax credit guide
 ├── ac-repair-cost/                      # AC repair pricing & diagnostic parts
 ├── mini-split-installation-cost/        # Ductless mini-split guide & DIY equipment
 ├── smart-thermostat-installation-cost/  # Smart thermostats & hardware guide
@@ -52,6 +59,6 @@ hvac-cost-guide/
 ## 🔍 Google Search Console Setup
 
 1. Go to [Google Search Console](https://search.google.com/search-console).
-2. Add your live URL (e.g. `https://your-site.pages.dev` or custom domain).
-3. Verify ownership via HTML meta tag (paste verification code into line 9 of `index.html`) or via Cloudflare DNS.
+2. Add your live URL (e.g. `https://3limohammed.github.io/hvac-cost-guide/` or custom domain).
+3. Verify ownership via HTML meta tag or verification file.
 4. In the left menu, click **Sitemaps**, enter `sitemap.xml`, and click **Submit**.
